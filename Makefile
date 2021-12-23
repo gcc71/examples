@@ -14,3 +14,8 @@ clean:
 	@echo "all clean"
 run:
 	python pyw.py
+
+buildcpp:
+	@echo "building..."
+	g++ -c -fPIC maincpp.cpp -o maincpp.o
+	g++ -shared -Wl,-soname,-libgeek.so -o libgeek.so maincpp.o
